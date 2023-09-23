@@ -54,15 +54,15 @@ def classifyTriangle(a,b,c):
     if (a + b <= c) or (a + c <= b) or (b + c <= a):
         return 'NotATriangle'
     # now we know that we have a valid triangle 
-    # ERROR 2: a == b and b == a should be a == b and b == c
+    # ERROR 3: a == b and b == a should be a == b and b == c
     if a == b and b == c:
         return 'Equilateral'
-    # ERROR 3: b * 2 should be b * b and c * b should be c * c
+    # ERROR 4: b * 2 should be b * b and c * b should be c * c
     elif ((a * a) + (b * b)) == (c * c):
         return 'Right'
     elif (a != b) and  (b != c) and (c != a):
         return 'Scalene'
-    # ERROR 4: a == b and b == a should be a == b or b == c or c == a
+    # ERROR 5: a == b and b == a should be a == b or b == c or c == a
     elif (a == b) or (b == a) or (c == a):
         return 'Isoceles'
     else:
